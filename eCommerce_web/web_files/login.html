@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login/Register | GoEco</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="images/logoiconwhite.png">
+</head>
+<body>
+  <div class="login-header">
+    <div class="left">
+        <a href="products.html">SHOP</a>
+        <a href="aboutus.html">ABOUT US</a>
+    </div> 
+    <a href="home.html" class="logo">
+        <img src="images/logowhite.png" alt="logo">
+    </a>
+    <div class="right">
+        <a href="checkout.html">CART</a>
+        <a href="login.html">LOG IN</a>
+    </div> 
+</div>
+
+  <div class="loginBck">
+    <div class="loginContainer">
+        <div class="circleOne"></div>
+        <div class="circleTwo"></div>
+        <form id="loginForm" class="form">
+          
+          <h2>Login</h2>
+          <div class="input-group">
+            <!-- <label for="loginUsername">Username</label> -->
+            <input type="text" id="loginUsername" name="loginUsername" required placeholder="Username">
+            <p class="error-message" id="loginUsernameError"></p>
+          </div>
+          <div class="input-group">
+            <!-- <label for="loginPassword">Password</label> -->
+            <input type="password" id="loginPassword" name="loginPassword" required placeholder="Password">
+            <p class="error-message" id="loginPasswordError"></p>
+          </div>
+          <button type="submit"  id="loginButton">Login</button>
+          <p id="registerLink">Not registered? <a href="#"><i>Register</i></a></p>
+        </form>
+    
+        
+
+        <form id="registerForm" class="form hidden">
+          
+            <h2>Register</h2>
+            <div class="input-group">
+             
+              <input type="text" id="registerFirstName" name="registerFirstName" placeholder="First Name" required>
+              <p class="error-message" id="registerFirstNameError"></p>
+            </div>
+            <div class="input-group">
+              
+              <input type="text" id="registerLastName" name="registerLastName" placeholder="Last Name" required>
+              <p class="error-message" id="registerLastNameError"></p>
+            </div>
+            <div class="input-group">
+            
+              <input type="email" id="registerEmail" name="registerEmail" placeholder="Email" required>
+              <p class="error-message" id="registerEmailError"></p>
+            </div>
+            <button type="submit" id="registerButton">Register</button>
+            <p id="loginLink" >Already have an account? <a href="#"><i>Back to Login</i></a></p>
+          </form>
+      </div>
+  </div>
+    
+  <script >
+document.addEventListener('DOMContentLoaded', function() {
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+  const registerLink = document.getElementById('registerLink');
+  const loginLink = document.getElementById('loginLink');
+  const registerButton = document.getElementById('registerButton');
+  const loginButton = document.getElementById('loginButton');
+  const loginUsernameInput = document.getElementById('loginUsername');
+  const loginPasswordInput = document.getElementById('loginPassword');
+  const registerFirstNameInput = document.getElementById('registerFirstName');
+  const registerLastNameInput = document.getElementById('registerLastName');
+  const registerEmailInput = document.getElementById('registerEmail');
+
+  registerLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    loginForm.classList.add('hidden');
+    registerForm.classList.remove('hidden');
+  });
+
+  loginLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    registerForm.classList.add('hidden');
+    loginForm.classList.remove('hidden');
+  });
+
+  loginButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    validateLoginForm();
+  });
+
+  registerButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    validateRegisterForm();
+  });
+
+  loginUsernameInput.addEventListener('input', function() {
+    const usernameError = document.getElementById('loginUsernameError');
+    usernameError.textContent = '';
+  });
+
+  loginPasswordInput.addEventListener('input', function() {
+    const passwordError = document.getElementById('loginPasswordError');
+    passwordError.textContent = '';
+  });
+
+  registerFirstNameInput.addEventListener('input', function() {
+    const firstNameError = document.getElementById('registerFirstNameError');
+    firstNameError.textContent = '';
+  });
+
+  registerLastNameInput.addEventListener('input', function() {
+    const lastNameError = document.getElementById('registerLastNameError');
+    lastNameError.textContent = '';
+  });
+
+  registerEmailInput.addEventListener('input', function() {
+    const email = registerEmailInput.value.trim();
+    const emailError = document.getElementById('registerEmailError');
+
+    emailError.textContent = '';
+    if (email !== '' && !isValidEmail(email)) {
+      emailError.textContent = 'Please enter a valid email address.';
+    }
+  });
+
+  function validateLoginForm() {
+    const username = loginUsernameInput.value.trim();
+    const password = loginPasswordInput.value.trim();
+    const usernameError = document.getElementById('loginUsernameError');
+    const passwordError = document.getElementById('loginPasswordError');
+
+    usernameError.textContent = '';
+    passwordError.textContent = '';
+
+    if (username === '') {
+      usernameError.textContent = 'Please enter your username.';
+    }
+    if (password === '') {
+      passwordError.textContent = 'Please enter your password.';
+    }
+
+    if (username !== '' && password !== '') {
+      const data = {
+        username: username,
+        password: password
+      };
+      console.log('Login:', data);
+      //login funks
+    }
+  }
+
+  function validateRegisterForm() {
+    const firstName = registerFirstNameInput.value.trim();
+    const lastName = registerLastNameInput.value.trim();
+    const email = registerEmailInput.value.trim();
+    const firstNameError = document.getElementById('registerFirstNameError');
+    const lastNameError = document.getElementById('registerLastNameError');
+    const emailError = document.getElementById('registerEmailError');
+
+    firstNameError.textContent = '';
+    lastNameError.textContent = '';
+    emailError.textContent = '';
+
+    if (firstName === '') {
+      firstNameError.textContent = 'Please enter your first name.';
+    }
+    if (lastName === '') {
+      lastNameError.textContent = 'Please enter your last name.';
+    }
+    if (email === '') {
+      emailError.textContent = 'Please enter an email.';
+    } else if (!isValidEmail(email)) {
+      emailError.textContent = 'Please enter a valid email address.';
+    } else {
+      emailError.textContent = '';
+    }
+
+    if (firstName !== '' && lastName !== '' && email !== '' && isValidEmail(email)) {
+      const data = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+      };
+      console.log('Register:', data);
+      // regjistrim funks
+    }
+  }
+
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+});
+  </script>
+</body>
+</html>

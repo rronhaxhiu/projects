@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Our Story | GoEco</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="icon" type="image/x-icon" href="images/logoiconwhite.png">
+
+</head>
+<body>
+    <div class="about-header">
+        <div class="left">
+            <a href="products.html">SHOP</a>
+            <a href="aboutus.html">ABOUT US</a>
+        </div> 
+        <a href="home.html" class="logo">
+            <img src="images/logo.png" alt="logo">
+        </a>
+        <div class="right">
+            <a href="checkout.html">CART</a>
+            <a href="login.html">LOG IN</a>
+        </div> 
+    </div>
+    <div class="storyBanner">
+             <h1>OUR STORY</h1>
+    </div>
+
+     
+    <div class="container">
+        <div class="storyDes">
+            <div>
+                <p>Once upon a time, in a world increasingly defined by its environmental challenges, a group of passionate individuals came together with a shared vision: to create a haven for eco-conscious consumers seeking a better, more sustainable way of living. This visionary group birthed what would become GoEco, a beacon of hope and change in the retail landscape.</p>
+                <p>The story begins with a collective realization that the planet was in desperate need of a new narrative—one that prioritized environmental well-being without compromising on style, quality, or convenience. This group of diverse individuals, each with their unique skills and backgrounds, recognized the profound impact that small, conscious choices could have on the planet.</p>
+                <p>Driven by a shared commitment to making a positive difference, the founders embarked on a journey to curate a selection of products that would redefine the concept of sustainable living. The criteria were stringent: every item must be ethically sourced, manufactured using responsible practices, and contribute to minimizing the ecological footprint. Thus, GoEco was born not merely as a retail outlet but as a revolutionary concept, a movement towards a greener, brighter future.</p>
+                <p>The team behind GoEco immersed themselves in a quest for eco-friendly alternatives, seeking out the most innovative and sustainable products from around the globe. From organic clothing that felt luxurious against the skin to reusable household goods that embraced the principles of circular living, each product on the virtual shelves told a story of responsible consumption and conscious living.</p>
+                <p>As the store flourished, so did the commitment of the team. The founders understood that true sustainability extended beyond the products themselves. They tirelessly sought out partnerships with suppliers who shared their values, forging relationships built on trust, transparency, and a shared dedication to the planet. Packaging was reconsidered, and efforts were made to minimize waste and promote recycling, ensuring that the entire supply chain embodied the ethos of sustainability.</p>
+                <p>Beyond the carefully curated product selection and eco-friendly supply chain, GoEco became a community hub. The team, passionate about environmental advocacy, saw an opportunity to not only provide products but also to educate and inspire. They engaged with customers, offering resources, tips, and information on adopting a more sustainable lifestyle. In doing so, they created a community that shared not just a shopping experience but a collective vision for a better, more sustainable world.</p>
+                <p>The journey of GoEco is one of continuous evolution and unwavering commitment. It's a story of a small group of individuals who dared to imagine a world where consumer choices could be a force for good, and every purchase could contribute to healing the planet. As GoEco continues to grow, so does its impact—a testament to the belief that, together, we can rewrite the story of our planet and create a narrative that future generations will be proud to inherit. And so, the tale of GoEco continues, with each customer, each product, and each small choice contributing to the unfolding chapters of a sustainable and flourishing future.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footercards">
+            <div id="footerleft">
+                <p class="footertitle">SMALL CHOICES, BIG IMPACT</p>
+                <p class="footertext">YOUR SMALL DECISIONS AT GOECO LEAD TO SIGNIFICANT CONTRIBUTIONS TO A BETTER WORLD AND A 
+                    HEALTHIER OCEAN
+                </p>
+                
+            </div>
+            <div id="footerright">
+                <div id="quicklinks">
+                    <p class="footertitle">QUICK LINKS</p>
+                    <a href="home.html">
+                        <p class="footertext">HOME</p>
+                    </a>
+                    <a href="products.html">
+                        <p class="footertext">PRODUCTS</p>
+                    </a>
+                    <a href="aboutus.html">
+                        <p class="footertext">ABOUT US</p>
+                    </a>
+                </div>
+                <div id="legal">
+                    <p class="footertitle">LEGAL</p>
+                    <a href="privacynotice.html">
+                        <p class="footertext">PRIVACY NOTICE</p>
+                    </a>
+                    <a href="termsofuse.html">
+                        <p class="footertext">TERMS OF USE</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="social">
+            <img id="footerlogo" src="images/logowhite.png">
+            <div class="socialicons">
+                <a href="#">
+                    <img src="images/instagram.png">
+                </a>
+                <a href="#">
+                    <img src="images/facebook.png">
+                </a>
+                <a href="#">
+                    <img src="images/twitter.png">
+                </a>
+                <a href="#">
+                    <img src="images/tiktok.png">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footertext">@ 2024 GoEco. All rights reserved</p>
+        </div>
+       
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+       var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 5,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+           delay: 2000, // Set the delay between slides in milliseconds (e.g., 2000 for 2 seconds)
+           disableOnInteraction: false, // Prevent autoplay from stopping on user interaction
+          },
+
+        });
+    </script>
+    <script>
+        const primaryHeader = document.querySelector('.primary-header');
+        const scrollWatcher = document.createElement('div');
+    
+        scrollWatcher.setAttribute('data-scroll-watcher', '');
+        primaryHeader.before(scrollWatcher);
+    
+        const navObserver = new IntersectionObserver((entries) => {
+            primaryHeader.classList.toggle('sticking', !entries[0].isIntersecting)
+        }, {rootMargin: "50px 0px 0px 0px"});
+    
+        navObserver.observe(scrollWatcher);
+    </script>
+</body>
+</html>

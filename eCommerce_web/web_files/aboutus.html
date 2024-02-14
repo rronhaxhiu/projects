@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>About Us | GoEco</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="icon" type="image/x-icon" href="images/logoiconwhite.png">
+
+</head>
+<body>
+    <div class="about-header">
+        <div class="left">
+            <a href="products.html">SHOP</a>
+            <a href="aboutus.html">ABOUT US</a>
+        </div> 
+        <a href="home.html" class="logo">
+            <img src="images/logo.png" alt="logo">
+        </a>
+        <div class="right">
+            <a href="checkout.html">CART</a>
+            <a href="login.html">LOG IN</a>
+        </div> 
+    </div>
+    <div class="aboutBanner">
+             <h1>ABOUT US</h1>
+    </div>
+
+    <!-- Kodi per Slider--> 
+   
+      <section class="slider-wrapper">
+        <h2>Our Clients</h2>
+        <button class="slide-arrow" id="slide-arrow-prev">
+          &#8249;
+        </button>
+        <button class="slide-arrow" id="slide-arrow-next">
+          &#8250;
+        </button>
+        <ul class="slides-container" id="slides-container">
+            <li class="slide"><img src="images/amazon-pay.png" alt="Image 1"></li>
+            <li class="slide"><img src="images/apple.png" alt="Image 2"></li>
+            <li class="slide"><img src="images/ibm.png" alt="Image 3"></li>
+            <li class="slide"><img src="images/intel.png" alt="Image 4"></li>
+            <li class="slide"><img src="images/samsung.png" alt="Image 5"></li>
+            <li class="slide"><img src="images/amazon-pay.png" alt="Image 1"></li>
+            <li class="slide"><img src="images/apple.png" alt="Image 2"></li>
+            <li class="slide"><img src="images/ibm.png" alt="Image 3"></li>
+            <li class="slide"><img src="images/intel.png" alt="Image 4"></li>
+            <li class="slide"><img src="images/samsung.png" alt="Image 5"></li>
+        </ul>
+      </section>
+      
+  
+    <div class="container">
+        <div class="aboutDes">
+            <div>
+                <h2>Leading our Company</h2>
+                <p>Welcome to GoEco, where passion meets purpose in our commitment to a greener, 
+                    healthier planet. At the heart of our brand is a profound dedication to promoting 
+                    eco-friendly and sustainable living. Our mission is clear: to provide a curated selection 
+                    of products that empower individuals to make environmentally conscious choices without 
+                    compromising on style, quality, or convenience.</p>
+                <p>Every product in our store undergoes a rigorous selection process, 
+                    ensuring that it meets our stringent sustainability criteria. 
+                    From ethically sourced materials to responsible manufacturing practices, 
+                    we prioritize eco-friendly alternatives that contribute to the well-being of our planet. 
+                    We are proud to offer a diverse range of items, including but not limited to organic clothing, 
+                    reusable household goods, and innovative, energy-efficient technologies.</p>
+                <a href="ourstory.html">Read More</a>
+            </div>
+            <div>
+                <img src="images/recycling.jpg" alt="#"/>
+            </div>
+        </div>
+        <div class="ourTeam">
+            <h2>Our Team</h2>
+            <p>Meet the eco-enthusiasts behind GoEco!</p>
+            <div class="teamDis">
+                <div>
+                    <img src="images/girl.png" alt="team"/>
+                    <h3>Medina Mustafa</h3>
+                </div>
+                <div>
+                    <img src="images/man.png" alt="team"/>
+                    <h3>Rron Haxhiu</h3>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footercards">
+            <div id="footerleft">
+                <p class="footertitle">SMALL CHOICES, BIG IMPACT</p>
+                <p class="footertext">YOUR SMALL DECISIONS AT GOECO LEAD TO SIGNIFICANT CONTRIBUTIONS TO A BETTER WORLD AND A 
+                    HEALTHIER OCEAN
+                </p>
+                
+            </div>
+            <div id="footerright">
+                <div id="quicklinks">
+                    <p class="footertitle">QUICK LINKS</p>
+                    <a href="home.html">
+                        <p class="footertext">HOME</p>
+                    </a>
+                    <a href="products.html">
+                        <p class="footertext">PRODUCTS</p>
+                    </a>
+                    <a href="aboutus.html">
+                        <p class="footertext">ABOUT US</p>
+                    </a>
+                </div>
+                <div id="legal">
+                    <p class="footertitle">LEGAL</p>
+                    <a href="privacynotice.html">
+                        <p class="footertext">PRIVACY NOTICE</p>
+                    </a>
+                    <a href="termsofuse.html">
+                        <p class="footertext">TERMS OF USE</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="social">
+            <img id="footerlogo" src="images/logowhite.png">
+            <div class="socialicons">
+                <a href="#">
+                    <img src="images/instagram.png">
+                </a>
+                <a href="#">
+                    <img src="images/facebook.png">
+                </a>
+                <a href="#">
+                    <img src="images/twitter.png">
+                </a>
+                <a href="#">
+                    <img src="images/tiktok.png">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footertext">@ 2024 GoEco. All rights reserved</p>
+        </div>
+       
+    </div>
+    
+    <script>
+        const slidesContainer = document.getElementById("slides-container");
+        const slide = document.querySelector(".slide");
+        const prevButton = document.getElementById("slide-arrow-prev");
+        const nextButton = document.getElementById("slide-arrow-next");
+
+        nextButton.addEventListener("click", () => {
+          const slideWidth = slide.clientWidth;
+          slidesContainer.scrollLeft += slideWidth;
+        });
+
+        prevButton.addEventListener("click", () => {
+          const slideWidth = slide.clientWidth;
+          slidesContainer.scrollLeft -= slideWidth;
+        });
+
+
+      </script>
+    <script>
+        const primaryHeader = document.querySelector('.primary-header');
+        const scrollWatcher = document.createElement('div');
+    
+        scrollWatcher.setAttribute('data-scroll-watcher', '');
+        primaryHeader.before(scrollWatcher);
+    
+        const navObserver = new IntersectionObserver((entries) => {
+            primaryHeader.classList.toggle('sticking', !entries[0].isIntersecting)
+        }, {rootMargin: "50px 0px 0px 0px"});
+    
+        navObserver.observe(scrollWatcher);
+    </script>
+</body>
+</html>

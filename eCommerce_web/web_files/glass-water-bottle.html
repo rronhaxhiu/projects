@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | GoEco</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="icon" type="image/x-icon" href="images/logoiconwhite.png">
+</head>
+<body>
+
+
+    <div class="primary-header">
+        <div class="left">
+            <a href="products.html"> < PRODUCTS</a>
+        </div> 
+        <a href="home.html" class="logo">
+            <img src="images/logo.png" alt="logo">
+        </a>
+        <div class="right">
+            <a href="checkout.html">CART</a>
+            <a href="login.html">LOG IN</a>
+        </div> 
+    </div>
+
+    <div class="product-page">
+        <div class="product-image">
+            <img src="images/glasswaterbottle.jpg">
+        </div>
+        <div class="product-info">
+            <div class="product-name">GLASS WATER BOTTLE</div>
+            <div class="product-stock">In stock: <span id="stock">54</span> units</div>
+            <div class="product-description">Glass water bottle: A transparent and reusable container, combining simplicity with sustainability for on-the-go hydration. Ditch single-use plastics with this eco-conscious choice for daily refreshment.</div>
+            <div class="product-price">17.00€</div>
+            <div class="product-buttons">
+                <button class="purchase-button">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--copy footerin-->    
+    <div class="footer">
+        <div class="footercards">
+            <div id="footerleft">
+                <p class="footertitle">SMALL CHOICES, BIG IMPACT</p>
+                <p class="footertext">YOUR SMALL DECISIONS AT GOECO LEAD TO SIGNIFICANT CONTRIBUTIONS TO A BETTER WORLD AND A 
+                    HEALTHIER OCEAN
+                </p>
+            </div>
+            <div id="footerright">
+                <div id="quicklinks">
+                    <p class="footertitle">QUICK LINKS</p>
+                    <a href="home.html">
+                        <p class="footertext">HOME</p>
+                    </a>
+                    <a href="products.html">
+                        <p class="footertext">PRODUCTS</p>
+                    </a>
+                    <a href="aboutus.html">
+                        <p class="footertext">ABOUT US</p>
+                    </a>
+                </div>
+                <div id="legal">
+                    <p class="footertitle">LEGAL</p>
+                    <a href="privacynotice.html">
+                        <p class="footertext">PRIVACY NOTICE</p>
+                    </a>
+                    <a href="termsofuse.html">
+                        <p class="footertext">TERMS OF USE</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="social">
+            <img id="footerlogo" src="images/logowhite.png">
+            <div class="socialicons">
+                <a href="#">
+                    <img src="images/instagram.png">
+                </a>
+                <a href="#">
+                    <img src="images/facebook.png">
+                </a>
+                <a href="#">
+                    <img src="images/twitter.png">
+                </a>
+                <a href="#">
+                    <img src="images/tiktok.png">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footertext">@ 2024 GoEco. All rights reserved</p>
+        </div>
+    </div>
+</body>
+
+<!--copy js per animacjon t`navbar-->
+<script>
+    const primaryHeader = document.querySelector('.primary-header');
+    const scrollWatcher = document.createElement('div');
+
+    scrollWatcher.setAttribute('data-scroll-watcher', '');
+    primaryHeader.before(scrollWatcher);
+
+    const navObserver = new IntersectionObserver((entries) => {
+        primaryHeader.classList.toggle('sticking', !entries[0].isIntersecting)
+    }, {rootMargin: "50px 0px 0px 0px"});
+
+    navObserver.observe(scrollWatcher);
+</script>
+</html>
